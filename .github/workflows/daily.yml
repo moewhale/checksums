@@ -82,7 +82,7 @@ jobs:
 
       - name: Upload artifact
         if: always()
-        uses: actions/upload-artifact@v5 # Node24 (v4 Node20, v5 2025-10 切 Node24)
+        uses: actions/upload-artifact@v6 # Node24 (v4 Node20, v5 2025-10 切 Node24)
         with:
           name: checksums-dist
           path: dist/
