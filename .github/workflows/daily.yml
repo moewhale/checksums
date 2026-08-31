@@ -1,0 +1,89 @@
+name: daily-checksums
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # 每天 02:00 UTC（北京时间 10:00），满足“每天一次”
+  workflow_dispatch:
+  push:
+    paths:
+      - 'versions.yaml'
+      - 'tools/fetch-checksums.sh'
+      - '.github/workflows/daily.yml'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq --version
+
+      - name: Fetch & generate
+        run: |
+          chmod +x tools/fetch-checksums.sh
+          ./tools/fetch-checksums.sh --update
+          echo "--- dist/checksums.sha256 ---"
+          cat dist/checksums.sha256
+          echo "--- dist/checksums.json ---"
+          cat dist/checksums.json
+
+      - name: Check coverage
+        run: |
+          ./tools/fetch-checksums.sh --check
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet -- dist/ versions.yaml; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git diff -- dist/ || true
+          fi
+
+      - name: Create Pull Request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: daily checksums update'
+          title: 'chore: daily checksums update'
+          body: |
+            Automated daily update.
+
+            - Trigger: `${{ github.event_name }}` on `${{ github.ref }}`
+            - Updated `dist/checksums.sha256` & `dist/checksums.json` via `tools/fetch-checksums.sh --update`
+            - Source: `versions.yaml`
+
+            **Review**: verify each hash matches upstream publisher (e.g. nginx.org, php.net).
+
+            After merge, downstream projects can:
+            ```
+            curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/main/dist/checksums.sha256 -o checksums.sha256
+            sha256sum -c checksums.sha256 --ignore-missing --strict
+            ```
+          branch: chore/daily-checksums
+          delete-branch: true
+          add-paths: |
+            dist/checksums.sha256
+            dist/checksums.json
+            versions.yaml
+          labels: |
+            automated
+            supply-chain
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checksums-dist
+          path: dist/
+          retention-days: 30
