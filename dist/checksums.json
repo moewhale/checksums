@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-08-31T04:29:00Z",
+  "packages": {
+    "freetype": {
+      "filename": "freetype-2.13.0.tar.xz",
+      "sha256": "5ee23abd047636c24b2d43c6625dcafc66661d1aca64dec9e0d05df29592624c",
+      "source": "origin",
+      "url": "https://download.savannah.gnu.org/releases/freetype/freetype-2.13.0.tar.xz",
+      "version": "2.13.0"
+    },
+    "jemalloc": {
+      "filename": "jemalloc-5.3.0.tar.bz2",
+      "sha256": "2db82d1e7119df3e71b7640219b6dfe84789bc0537983c3b7ac4f7189aecfeaa",
+      "source": "origin",
+      "url": "https://github.com/jemalloc/jemalloc/releases/download/5.3.0/jemalloc-5.3.0.tar.bz2",
+      "version": "5.3.0"
+    },
+    "libiconv": {
+      "filename": "libiconv-1.18.tar.gz",
+      "sha256": "3b08f5f4f9b4eb82f151a7040bfd6fe6c6fb922efe4b1659c66ea933276965e8",
+      "source": "origin",
+      "url": "https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz",
+      "version": "1.18"
+    },
+    "mariadb": {
+      "filename": "mariadb-11.8.9.tar.gz",
+      "sha256": "2e015b7e91004142eda8b3a20d3ceb875cf2ae55e72603e7222cd497d4e56fc6",
+      "source": "origin",
+      "url": "https://archive.mariadb.org/mariadb-11.8.9/source/mariadb-11.8.9.tar.gz",
+      "version": "11.8.9"
+    },
+    "mariadb-binary": {
+      "filename": "mariadb-11.8.9-linux-systemd-x86_64.tar.gz",
+      "sha256": "32f8871a2aa38b36aa418b7f4abc6fc0c6ef1ba5a45798cacb2afa52c8a6113b",
+      "source": "origin",
+      "url": "https://archive.mariadb.org/mariadb-11.8.9/bintar-linux-systemd-x86_64/mariadb-11.8.9-linux-systemd-x86_64.tar.gz",
+      "version": "11.8.9"
+    },
+    "nginx": {
+      "filename": "nginx-1.31.4.tar.gz",
+      "sha256": "e6f20b644a17a643f059ae6467a1971fe2811587d025e071068753a1f1e3b3c3",
+      "source": "origin",
+      "url": "https://nginx.org/download/nginx-1.31.4.tar.gz",
+      "version": "1.31.4"
+    },
+    "openssl": {
+      "filename": "openssl-3.5.5.tar.gz",
+      "sha256": "b28c91532a8b65a1f983b4c28b7488174e4a01008e29ce8e69bd789f28bc2a89",
+      "source": "origin",
+      "url": "https://www.openssl.org/source/openssl-3.5.5.tar.gz",
+      "version": "3.5.5"
+    },
+    "openssl-compat": {
+      "filename": "openssl-1.1.1w.tar.gz",
+      "sha256": "cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8",
+      "source": "origin",
+      "url": "https://www.openssl.org/source/old/1.1.1/openssl-1.1.1w.tar.gz",
+      "version": "1.1.1w"
+    },
+    "pcre": {
+      "filename": "pcre-8.45.tar.bz2",
+      "sha256": "4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8",
+      "source": "origin",
+      "url": "https://sourceforge.net/projects/pcre/files/pcre/8.45/pcre-8.45.tar.bz2/download",
+      "version": "8.45"
+    },
+    "php": {
+      "filename": "php-8.5.10.tar.bz2",
+      "sha256": "d79bd4f3a9248e5cb5833766ba0d51cd35dd01b8727f23f30bcdba6fabc51d3e",
+      "source": "origin",
+      "url": "https://www.php.net/distributions/php-8.5.10.tar.bz2",
+      "version": "8.5.10"
+    },
+    "phpMyAdmin": {
+      "filename": "phpMyAdmin-5.2.3-all-languages.tar.xz",
+      "sha256": "57881348297c4412f86c410547cf76b4d8a236574dd2c6b7d6a2beebe7fc44e3",
+      "source": "origin",
+      "url": "https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-languages.tar.xz",
+      "version": "5.2.3"
+    },
+    "postgresql": {
+      "filename": "postgresql-18.6.tar.gz",
+      "sha256": "983ee554ec53dbeb9b70797bef9fcf4e67e117e7e48ca1463cc80b3ff8e8ff3f",
+      "source": "origin",
+      "url": "https://ftp.postgresql.org/pub/source/v18.6/postgresql-18.6.tar.gz",
+      "version": "18.6"
+    },
+    "redis": {
+      "filename": "redis-8.10.0.tar.gz",
+      "sha256": "f1baa4b28befd417aa6577ebeedde9e9fc7814cfcc299b2a6d2fd99ef7420a6c",
+      "source": "origin",
+      "url": "https://download.redis.io/releases/redis-8.10.0.tar.gz",
+      "version": "8.10.0"
+    }
+  }
+}
