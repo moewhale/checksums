@@ -2,7 +2,7 @@
 # 修改 version 字段后提交，GitHub Actions 会自动刷新 dist/checksums.*
 # 也可本地执行: ./tools/fetch-checksums.sh --update
 meta:
-  updated: "2026-08-31"
+  updated: "2026-09-03"
   maintainer: "checkmd5-bot"
   description: "Tracked upstream packages for SHA256 supply-chain verification"
 packages:
